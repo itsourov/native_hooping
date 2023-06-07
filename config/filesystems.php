@@ -56,10 +56,34 @@ return [
             'throw' => false,
         ],
 
+
         'profile-images' => [
             'driver' => 'local',
             'root' => storage_path('app/public/profile-images'),
             'url' => env('APP_URL') . '/storage/profile-images',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+
+        'product-thumbnails' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/product-thumbnails'),
+            'url' => env('APP_URL') . '/storage/product-thumbnails',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+        'product-images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/product-images'),
+            'url' => env('APP_URL') . '/storage/product-images',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+        'uploads' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/uploads'),
+            'url' => env('APP_URL') . '/storage/uploads',
             'visibility' => 'public',
             'throw' => false,
         ],
