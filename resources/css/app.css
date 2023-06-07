@@ -1,0 +1,31 @@
+@import 'filepond/dist/filepond.min.css';
+@import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+[x-cloak] {
+    display: none !important;
+}
+
+.filepond--panel-root {
+    background-color: rgb(237, 237, 237);
+}
+
+.dark .filepond--panel-root {
+    background-color: #40444a;
+}
+
+.dark .filepond--drop-label {
+
+    color: rgb(206, 206, 206);
+}
+
+.format img {
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 0.25rem;
+}
