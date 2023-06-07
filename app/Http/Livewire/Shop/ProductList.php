@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Shop;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Livewire\Component;
 use App\Models\CartItem;
 use Livewire\WithPagination;
@@ -10,11 +11,29 @@ use Livewire\WithPagination;
 class ProductList extends Component
 {
     use WithPagination;
+
+
+    public $cat_id = [];
+
+
+    protected $queryString = ['cat_id' => ['compact' => ',']];
+
+
+
+
+    public function updated()
+    {
+        $this->resetPage();
+    }
+
+
     public function render()
     {
-        $products = Product::latest()->with(['media', 'categories'])->withCount('reviews')->withAvg('reviews', 'rating')->paginate(12);
 
-        return view('livewire.shop.product-list', compact('products'));
+        $categories = ProductCategory::withCount('products')->get();
+        $products = Product::Filter(['categories' => $this->cat_id])->latest()->with(['media', 'categories'])->withCount('reviews')->withAvg('reviews', 'rating')->paginate(12);
+
+        return view('livewire.shop.product-list', compact('products', 'categories'));
     }
 
     public function mount()

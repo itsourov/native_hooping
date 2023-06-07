@@ -25,6 +25,10 @@ Route::get('/', function () {
     return redirect(route('shop.index'));
 })->name('home');
 
+Route::get('/icons', function () {
+    return view('icons');
+})->name('icons');
+
 
 Route::prefix('shop')->name('shop.')->middleware([])->group(function () {
     Route::middleware([])->group(function () {
