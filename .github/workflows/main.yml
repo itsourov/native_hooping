@@ -19,7 +19,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: 31.170.160.185
-        username: u440599207.shirin	
+        username: u440599207.nativehooping	
         password: ${{ secrets.ftp_password }}
 
     - name: Deploy to production
@@ -30,7 +30,7 @@ jobs:
         password: ${{ secrets.ssh_password }}
         port: 65002
         script: |
-          cd /home/u440599207/domains/techland360.com/public_html/subdomain/shirin
+          cd /home/u440599207/domains/techland360.com/public_html/subdomain/nativehooping
           php artisan down
           # cp .env.example .env
           # php artisan key:generate

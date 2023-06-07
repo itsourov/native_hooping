@@ -1,6 +1,6 @@
 
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^shirin.techland360.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.shirin.techland360.com$
+RewriteCond %{HTTP_HOST} ^nativehooping.techland360.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.nativehooping.techland360.com$
 RewriteCond %{REQUEST_URI} !public/
 RewriteRule (.*) /public/$1 [L]
