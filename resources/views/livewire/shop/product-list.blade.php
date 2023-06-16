@@ -1,10 +1,7 @@
 <div class="space-y-4">
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 " x-data="{ filterMenuOpen: false }">
         <div class="fixed lg:block lg:flex-none lg:relative top-0 left-0 h-full overflow-y-scroll z-40"
-            x-show="filterMenuOpen" x-transition:enter="transition ease-in-out duration-300 transform"
-            x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
-            x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0"
-            x-transition:leave-end="-translate-x-full">
+            :class="filterMenuOpen ? 'block' : 'hidden'">
 
 
             <div class=" w-screen max-w-xs lg:max-w-screen-md lg:w-full">
