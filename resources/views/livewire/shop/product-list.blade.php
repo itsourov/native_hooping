@@ -1,7 +1,10 @@
 <div class="space-y-4">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
-        <div class="fixed  hidden lg:block lg:flex-none lg:relative top-0 left-0 h-full overflow-y-scroll z-40"
-            id="shopFilterMenu">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 " x-data="{ filterMenuOpen: false }">
+        <div class="fixed lg:block lg:flex-none lg:relative top-0 left-0 h-full overflow-y-scroll z-40"
+            x-show="filterMenuOpen" x-transition:enter="transition ease-in-out duration-300 transform"
+            x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+            x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="-translate-x-full">
 
 
             <div class=" w-screen max-w-xs lg:max-w-screen-md lg:w-full">
@@ -10,7 +13,7 @@
                     <div class="flex">
                         <p class="font-bold flex-grow">Filters</p>
 
-                        <button type="button" x-on:click="shopFilterMenuToggle()"
+                        <button type="button" x-on:click="filterMenuOpen = false"
                             class="-m-2 p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 lg:hidden">
                             <span class="sr-only">Close panel</span>
                             <!-- Heroicon name: outline/x-mark -->
@@ -54,7 +57,7 @@
             <div
                 class="flex items-center card w-full  p-2  bg-white border border-gray-200 rounded shadow-sm dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex-grow">
-                    <button x-on:click="shopFilterMenuToggle()"
+                    <button x-on:click="filterMenuOpen = true"
                         class="lg:hidden  items-center gap-2 bg-gray-200 rounded px-5 py-1">
                         {{-- <x-ri-filter-3-line class="inline" /> --}}
                         Filter
@@ -160,17 +163,4 @@
         </div>
 
     </div>
-
-
-    <script>
-        const shopFilterMenu = document.getElementById("shopFilterMenu");
-
-
-
-        function shopFilterMenuToggle() {
-
-            shopFilterMenu.classList.toggle("hidden");
-
-        }
-    </script>
 </div>
